@@ -11,12 +11,12 @@ val app_name = "Bluetooth LE Spam"
 
 android {
     namespace = "de.simon.dankelmann.bluetoothlespam"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "de.simon.dankelmann.bluetoothlespam"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = compileSdk
         versionCode = 3
         versionName = "1.0.9"
     }
