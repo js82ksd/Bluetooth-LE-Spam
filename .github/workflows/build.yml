@@ -22,9 +22,12 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x ./gradlew
       
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
-      
+    - name: Build Debug APK with Java 17 compatibility
+      run: |
+        ./gradlew assembleDebug -Pandroid.debug.obsoleteApi=true
+        # Или если не сработает:
+        # ./gradlew assembleDebug -Dorg.gradle.java.home=$JAVA_HOME_17_X64
+        
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
